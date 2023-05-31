@@ -5,7 +5,7 @@ import { SettingService } from 'src/app/service/setting.service';
 @Component({
   selector: 'app-companysetting',
   templateUrl: './companysetting.component.html',
-  styleUrls: ['./companysetting.component.css']
+  styleUrls: ['./companysetting.component.scss']
 })
 
 export class CompanysettingComponent implements OnInit {

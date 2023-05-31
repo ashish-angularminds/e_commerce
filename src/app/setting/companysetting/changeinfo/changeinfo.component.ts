@@ -6,7 +6,7 @@ import { CompanysettingComponent } from '../companysetting.component';
 @Component({
   selector: 'app-changeinfo',
   templateUrl: './changeinfo.component.html',
-  styleUrls: ['./changeinfo.component.css']
+  styleUrls: ['./changeinfo.component.scss']
 })
 export class ChangeinfoComponent implements OnInit {
 

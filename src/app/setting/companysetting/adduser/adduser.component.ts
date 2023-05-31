@@ -7,7 +7,7 @@ import { CompanysettingComponent } from '../companysetting.component';
 @Component({
   selector: 'app-adduser',
   templateUrl: './adduser.component.html',
-  styleUrls: ['./adduser.component.css']
+  styleUrls: ['./adduser.component.scss']
 })
 export class AdduserComponent {
   constructor(private settingservice: SettingService, private toast: NgToastService,

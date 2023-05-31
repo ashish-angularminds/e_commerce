@@ -5,7 +5,7 @@ import { SettingService } from 'src/app/service/setting.service';
 @Component({
   selector: 'app-changemypassword',
   templateUrl: './changemypassword.component.html',
-  styleUrls: ['./changemypassword.component.css']
+  styleUrls: ['./changemypassword.component.scss']
 })
 export class ChangemypasswordComponent {
 

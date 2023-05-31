@@ -6,7 +6,7 @@ import { CompanysettingComponent } from '../companysetting.component';
 @Component({
   selector: 'app-changerole',
   templateUrl: './changerole.component.html',
-  styleUrls: ['./changerole.component.css']
+  styleUrls: ['./changerole.component.scss']
 })
 export class ChangeroleComponent {
 
