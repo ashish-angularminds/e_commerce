@@ -28,25 +28,25 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.authService.signOut();
-    this.recaptchaV3Service.execute('importantAction').subscribe((token) => {
-      this.authService.authState.subscribe((user) => {
-        this.user = user;
-        this.loggedIn = (user != null);
-        this.http.googlelogin({ token: user.idToken, captcha: token }).subscribe(
-          res => {
-            this.route.navigate(['setting', 'my-profile']);
-            this.loginsuccess(res);
-          },
-          err => {
-            this.toast.error({
-              detail: 'Authentication failed',
-              summary: err.error.message,
-              duration: 5000,
-            });
-          }
-        );
-      });
+    // this.recaptchaV3Service.execute('importantAction').subscribe((token) => {
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+      this.http.googlelogin({ token: user.idToken }).subscribe(
+        res => {
+          this.route.navigate(['setting', 'my-profile']);
+          this.loginsuccess(res);
+        },
+        err => {
+          this.toast.error({
+            detail: 'Authentication failed',
+            summary: err.error.message,
+            duration: 5000,
+          });
+        }
+      );
     });
+    // });
   }
 
   loginsuccess(res: any) {

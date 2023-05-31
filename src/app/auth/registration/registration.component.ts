@@ -20,32 +20,32 @@ export class RegistrationComponent {
     password: '',
     name: '',
     company: '',
-    captcha: '',
+    // captcha: '',
   }
   // alluser: user[] = [];
   register() {
-    this.recaptchaV3Service.execute('importantAction').subscribe((token: string) => {
-      this.User.captcha = token;
-      this.service.set(this.User).subscribe(
-        res => {
-          console.log('My HTTP response', res);
-          this.toast.success({
-            detail: 'Registration Successful',
-            summary: 'User is Registrated...',
-            duration: 5000,
-          });
-          this.route.navigate(['/auth/login']);
-        },
-        err => {
-          console.log('My HTTP Error', err);
-          this.toast.error({
-            detail: 'Registration failed',
-            summary: err.error.message,
-            duration: 5000,
-          });
-        },
-      );
-    })
+    // this.recaptchaV3Service.execute('importantAction').subscribe((token: string) => {
+    // this.User.captcha = token;
+    this.service.set(this.User).subscribe(
+      res => {
+        console.log('My HTTP response', res);
+        this.toast.success({
+          detail: 'Registration Successful',
+          summary: 'User is Registrated...',
+          duration: 5000,
+        });
+        this.route.navigate(['/auth/login']);
+      },
+      err => {
+        console.log('My HTTP Error', err);
+        this.toast.error({
+          detail: 'Registration failed',
+          summary: err.error.message,
+          duration: 5000,
+        });
+      },
+    );
+    // })
 
 
     // this.alluser = JSON.parse(localStorage.getItem('users') || '[{"email":"admin@123.com","password":"123"}]');
