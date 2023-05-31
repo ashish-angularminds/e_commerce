@@ -18,7 +18,7 @@ const routes: Routes = [
     loadChildren: () => import('./setting/setting.module').then((m) => m.SettingModule),
     canActivate: [ProfileGuard]
   },
-  { path: '**', redirectTo: '/auth/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/setting/my-profile', pathMatch: 'full' },
 ];
 
 @NgModule({
