@@ -61,24 +61,24 @@ export class LoginComponent implements OnInit {
 
   alluser!: any;
   login() {
-    this.recaptchaV3Service.execute('importantAction').subscribe((token: string) => {
-      this.loginUser.captcha = token;
-      this.http.login(this.loginUser).subscribe(
-        res => {
-          this.loginsuccess(res);
-          let dom = document.querySelector('.grecaptcha-badge') as HTMLElement;
-          dom.style.display = 'none';
-          this.route.navigate(['setting', 'my-profile']);
-        },
-        err => {
-          this.toast.error({
-            detail: 'Authentication failed',
-            summary: err.error.message,
-            duration: 5000,
-          });
-        }
-      )
-    });
+    // this.recaptchaV3Service.execute('importantAction').subscribe((token: string) => {
+    // this.loginUser.captcha = token;
+    this.http.login(this.loginUser).subscribe(
+      res => {
+        this.loginsuccess(res);
+        let dom = document.querySelector('.grecaptcha-badge') as HTMLElement;
+        dom.style.display = 'none';
+        this.route.navigate(['setting', 'my-profile']);
+      },
+      err => {
+        this.toast.error({
+          detail: 'Authentication failed',
+          summary: err.error.message,
+          duration: 5000,
+        });
+      }
+    )
+    // });
   }
 
   forgetpassword() {
