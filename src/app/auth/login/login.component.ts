@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   loginUser = {
     email: '',
     password: '',
-    captcha: '',
+    // captcha: '',
   }
 
   ngOnInit() {
