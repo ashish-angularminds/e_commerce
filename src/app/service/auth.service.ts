@@ -16,11 +16,11 @@ export class AuthService implements OnInit {
   }
 
   set(payload: any) {
-    return this.http.post('https://shop-api.ngminds.com/auth/register', payload);
+    return this.http.post('https://shop-api.ngminds.com/auth/register?captcha=false', payload);
   }
 
   login(payload: any) {
-    return this.http.post('https://shop-api.ngminds.com/auth/login', payload);
+    return this.http.post('https://shop-api.ngminds.com/auth/login?captcha=false', payload);
   }
 
   get(token: string) {

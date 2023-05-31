@@ -16,7 +16,7 @@ const routes: Routes = [
   {
     path: 'setting',
     loadChildren: () => import('./setting/setting.module').then((m) => m.SettingModule),
-    // canActivate: [ProfileGuard]
+    canActivate: [ProfileGuard]
   },
   { path: '**', redirectTo: '/auth/login', pathMatch: 'full' },
 ];
